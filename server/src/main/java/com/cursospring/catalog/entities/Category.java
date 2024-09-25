@@ -1,9 +1,24 @@
 package com.cursospring.catalog.entities;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import javax.persistence.Entity;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 import java.io.Serializable;
 
-public class Category implements Serializable{
+
+@Entity
+@Table(name = "tb_category")
+public class Category implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
     public Category() {
@@ -56,3 +71,4 @@ public class Category implements Serializable{
     }
     
 }
+
